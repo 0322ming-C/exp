@@ -8,11 +8,6 @@ import os
 from .visualization import visualize_opengan_training
 
 class Discriminator(nn.Module):
-    """
-    特征空间判别器 (2MB参数量)
-    输入: D维特征向量 (D=512/720)
-    输出: 二元分类概率 [0,1]
-    """
 
     def __init__(self, input_dim=512):
         super().__init__()
@@ -46,12 +41,7 @@ class Discriminator(nn.Module):
         return self.net(x)
 
 
-class Generator(nn.Module):
-    """
-    特征空间生成器 (2MB参数量)
-    输入: 64维噪声向量
-    输出: D维合成特征 (D=512/720)
-    """
+class Generator(nn.Module):
 
     def __init__(self, output_dim=512):
         super().__init__()
